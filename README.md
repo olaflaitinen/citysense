@@ -1,59 +1,36 @@
 <p align="center">
-  <img src="docs/assets/logo.svg" alt="CitySense Logo" width="280"/>
+  <img src="docs/assets/logo.svg" alt="CitySense Logo" width="320"/>
 </p>
 
-<h1 align="center">CitySense</h1>
+# CitySense
 
-<p align="center">
-  <strong>Geospatial RAG & MCP Server Library for Urban AI Development</strong>
-</p>
+[![PyPI version](https://img.shields.io/pypi/v/citysense?logo=pypi&logoColor=white)](https://pypi.org/project/citysense/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/citysense?logo=python&logoColor=white)](https://pypi.org/project/citysense/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/citysense?logo=pypi&logoColor=white)](https://pypi.org/project/citysense/)
+[![PyPI - Format](https://img.shields.io/pypi/format/citysense)](https://pypi.org/project/citysense/)
+[![PyPI - Status](https://img.shields.io/pypi/status/citysense)](https://pypi.org/project/citysense/)
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/citysense)](https://pypi.org/project/citysense/)
+[![CI](https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/ci.yml?branch=main&logo=githubactions&logoColor=white)](https://github.com/olaflaitinen/citysense/actions)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/olaflaitinen/citysense/badge)](https://scorecard.dev/viewer/?uri=github.com/olaflaitinen/citysense)
+[![codecov](https://codecov.io/gh/olaflaitinen/citysense/graph/badge.svg)](https://codecov.io/gh/olaflaitinen/citysense)
+[![Python](https://img.shields.io/badge/python-3.12%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-EUPL--1.2-green?logo=europeanunion&logoColor=white)](LICENSE)
+[![Ruff](https://img.shields.io/badge/code%20style-ruff-000000?logo=ruff&logoColor=white)](https://docs.astral.sh/ruff/)
+[![mypy](https://img.shields.io/badge/type%20checker-mypy-blue?logo=python&logoColor=white)](https://mypy-lang.org/)
+[![Read the Docs](https://img.shields.io/readthedocs/citysense?logo=readthedocs&logoColor=white)](https://citysense.readthedocs.io)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://pre-commit.com/)
+[![Qdrant](https://img.shields.io/badge/vector%20store-Qdrant-0094FF?logo=qdrant&logoColor=white)](https://qdrant.tech/)
+[![OpenStreetMap](https://img.shields.io/badge/data-OpenStreetMap-7EBC6F?logo=openstreetmap&logoColor=white)](https://www.openstreetmap.org/)
+[![SDG 11](https://img.shields.io/badge/UN-SDG%2011-009EDB)](https://sdgs.un.org/goals/goal11)
+[![MCP](https://img.shields.io/badge/protocol-MCP-6366F1)](https://modelcontextprotocol.io/)
+[![Shapely](https://img.shields.io/badge/geometry-Shapely-2.1%2B-3776AB?logo=python&logoColor=white)](https://shapely.readthedocs.io/)
+[![GeoPandas](https://img.shields.io/badge/geospatial-GeoPandas-1.1%2B-3776AB?logo=python&logoColor=white)](https://geopandas.org/)
 
-<p align="center">
-  <code>v0.2.0</code>&ensp;·&ensp;WUF13 Aligned&ensp;·&ensp;SDG 11&ensp;·&ensp;EUPL-1.2
-</p>
 
-<p align="center">
-  <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/v/citysense?style=flat&logo=pypi&logoColor=white&label=PyPI&color=3775A9" alt="PyPI"></a>
-  <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/pyversions/citysense?style=flat&logo=python&logoColor=white" alt="Python"></a>
-  <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/dm/citysense?style=flat&logo=pypi&logoColor=white&label=downloads&color=blue" alt="Downloads"></a>
-  <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/l/citysense?style=flat&logo=opensourceinitiative&logoColor=white" alt="License"></a>
-  <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/wheel/citysense?style=flat&logo=python&logoColor=white" alt="Wheel"></a>
-  <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/status/citysense?style=flat&logo=pypi&logoColor=white" alt="Status"></a>
-  <a href="https://github.com/olaflaitinen/citysense/actions"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/ci.yml?branch=main&style=flat&logo=githubactions&logoColor=white&label=CI" alt="CI"></a>
-  <a href="https://securityscorecards.dev/viewer/?uri=github.com/olaflaitinen/citysense"><img src="https://api.securityscorecards.dev/projects/github.com/olaflaitinen/citysense/badge?style=flat" alt="OpenSSF Scorecard"></a>
-  <a href="https://codecov.io/gh/olaflaitinen/citysense"><img src="https://img.shields.io/codecov/c/github/olaflaitinen/citysense?style=flat&logo=codecov&logoColor=white&label=coverage" alt="Coverage"></a>
-  <a href="https://github.com/olaflaitinen/citysense/stargazers"><img src="https://img.shields.io/github/stars/olaflaitinen/citysense?style=social" alt="Stars"></a>
-  <a href="https://github.com/olaflaitinen/citysense/network"><img src="https://img.shields.io/github/forks/olaflaitinen/citysense?style=social" alt="Forks"></a>
-  <a href="https://github.com/olaflaitinen/citysense/issues"><img src="https://img.shields.io/github/issues/olaflaitinen/citysense?style=social" alt="Issues"></a>
-  <a href="https://github.com/olaflaitinen/citysense/commits/main"><img src="https://img.shields.io/github/last-commit/olaflaitinen/citysense?style=flat&logo=github&logoColor=white" alt="Last commit"></a>
-  <a href="https://github.com/olaflaitinen/citysense"><img src="https://img.shields.io/github/repo-size/olaflaitinen/citysense?style=flat&logo=github&logoColor=white" alt="Repo size"></a>
-  <a href="https://docs.astral.sh/ruff/"><img src="https://img.shields.io/badge/code%20style-ruff-000000?style=flat&logo=ruff&logoColor=white" alt="Ruff"></a>
-  <a href="https://mypy-lang.org/"><img src="https://img.shields.io/badge/type%20checker-mypy-2A6DB2?style=flat&logo=python&logoColor=white" alt="mypy"></a>
-  <a href="https://pre-commit.com/"><img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?style=flat&logo=pre-commit&logoColor=white" alt="Pre-commit"></a>
-  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/protocol-MCP-6366F1?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PC9zdmc+&logoColor=white" alt="MCP"></a>
-  <a href="https://qdrant.tech/"><img src="https://img.shields.io/badge/vector%20store-Qdrant-DC244C?style=flat&logo=qdrant&logoColor=white" alt="Qdrant"></a>
-  <a href="https://www.openstreetmap.org/"><img src="https://img.shields.io/badge/data-OpenStreetMap-7EBC6F?style=flat&logo=openstreetmap&logoColor=white" alt="OpenStreetMap"></a>
-  <a href="https://dataspace.copernicus.eu/"><img src="https://img.shields.io/badge/imagery-Sentinel--2-1B4F72?style=flat&logo=satellite&logoColor=white" alt="Sentinel-2"></a>
-  <a href="https://sdgs.un.org/goals/goal11"><img src="https://img.shields.io/badge/UN-SDG%2011-009EDB?style=flat&logo=unitednations&logoColor=white" alt="SDG 11"></a>
-</p>
 
-<br>
+**Geospatial RAG and MCP Server Library for Urban AI Development**
 
-<p align="center">
-  Express spatial intent in natural language - receive structured geospatial results.<br>
-  Semantic retrieval over OpenStreetMap, Sentinel-2, Mapillary & KartaView data.
-</p>
-
-<p align="center">
-  <code>pip install citysense</code>
-</p>
-
-<p align="center">
-  <a href="https://pypi.org/project/citysense/"><b>PyPI</b></a>&ensp;·&ensp;
-  <a href="https://citysense.readthedocs.io"><b>Docs</b></a>&ensp;·&ensp;
-  <a href="https://github.com/olaflaitinen/citysense/issues"><b>Issues</b></a>&ensp;·&ensp;
-  <a href="https://github.com/olaflaitinen/citysense/blob/main/CHANGELOG.md"><b>Changelog</b></a>
-</p>
+Specification v0.2.0 | February 2026 | WUF13 Aligned
 
 ---
 
@@ -159,23 +136,21 @@ CitySense adds a third observational layer on top of traditional vector geospati
 ### System Stack
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│                       CitySense Stack                        │
-├──────────────────────────────────────────────────────────────┤
-│  CLI (citysense)                                             │
-│  pilot init | index build | query | serve | export | watch   │
-├───────────────────────────────┬──────────────────────────────┤
-│  MCP Server (stdio/SSE)       │  Geospatial RAG Pipeline     │
-│  - query_spatial_context      │  Intent Parser               │
-│  - analyze_housing_zone       │  -> H3 Filter                │
-│  - get_resilience_score       │  -> Dense + Sparse (BM25)    │
-│  - get_bounds                 │  -> RRF Fusion -> Reranker   │
-│                               │  -> Assembler                │
-├───────────────────────────────┴──────────────────────────────┤
-│  Connectors: OSM, Sentinel-2, Mapillary, KartaView, CDSE     │
-├──────────────────────────────────────────────────────────────┤
-│  Vector Store (Qdrant)  |  Geometry (Shapely, GeoPandas, H3) │
-└──────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           CitySense Stack                                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  CLI (citysense)                                                             │
+│  pilot init | index build | query | serve | export | imagery | watch         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  MCP Server (stdio/SSE)              │  Geospatial RAG Pipeline               │
+│  Tools: query_spatial_context,      │  Intent Parser → H3 Filter →            │
+│  analyze_housing_zone,              │  Dense Retrieval + Sparse (BM25) →       │
+│  get_resilience_score, bounds       │  RRF Fusion → Reranker → Assembler      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Connectors: OSM, Sentinel-2, Mapillary, KartaView, CDSE                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Vector Store (Qdrant)  │  Geometry (Shapely, GeoPandas, H3)                 │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Module Structure
@@ -739,20 +714,20 @@ H3 cells crossing the antimeridian require special handling. CitySense pre-filte
 
 ```
 OSM Overpass / STAC / Connectors
-          |
-          v
+        │
+        ▼
 Geometry + Metadata (GeoDataFrame)
-          |
-          v
-H3 Cell Assignment (resolution 7)
-          |
-          v
+        │
+        ▼
+H3 Cell Assignment (resolution 7 default)
+        │
+        ▼
 Chunking + Text Serialization
-          |
-          v
+        │
+        ▼
 Dense Embedding (fastembed) + Sparse (BM25)
-          |
-          v
+        │
+        ▼
 Qdrant Upsert (vectors + payload)
 ```
 
@@ -760,23 +735,23 @@ Qdrant Upsert (vectors + payload)
 
 ```
 Natural Language Query
-          |
-          v
-parse_intent() -> SpatialIntent
-          |
-          v
-H3 Filter (bbox -> H3 cells)
-          |
-          v
+        │
+        ▼
+parse_intent() → SpatialIntent
+        │
+        ▼
+H3 Filter (bbox → H3 cells)
+        │
+        ▼
 Dense + Sparse Retrieval (top-k each)
-          |
-          v
+        │
+        ▼
 RRF Fusion (k=60)
-          |
-          v
+        │
+        ▼
 Reranker (optional)
-          |
-          v
+        │
+        ▼
 Assembled Context (GeoJSON, summary)
 ```
 
