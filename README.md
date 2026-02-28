@@ -170,7 +170,7 @@ CitySense adds a third observational layer on top of traditional vector geospati
 │  - get_bounds                 │  -> RRF Fusion -> Reranker   │
 │                               │  -> Assembler                │
 ├───────────────────────────────┴──────────────────────────────┤
-│  Connectors: OSM, Sentinel-2, Mapillary, KartaView, CDSE    │
+│  Connectors: OSM, Sentinel-2, Mapillary, KartaView, CDSE     │
 ├──────────────────────────────────────────────────────────────┤
 │  Vector Store (Qdrant)  |  Geometry (Shapely, GeoPandas, H3) │
 └──────────────────────────────────────────────────────────────┘
