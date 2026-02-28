@@ -10,52 +10,52 @@
 
   <!-- Project Status & PyPI -->
   <p>
-    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/v/citysense?logo=pypi&logoColor=white" alt="PyPI version"></a>
-    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/pyversions/citysense?logo=python&logoColor=white" alt="PyPI - Python Version"></a>
-    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/wheel/citysense?logo=pypi&logoColor=white" alt="PyPI - Wheel"></a>
-    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/format/citysense?logo=pypi&logoColor=white" alt="PyPI - Format"></a>
-    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/status/citysense?logo=pypi&logoColor=white" alt="PyPI - Status"></a>
-    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/dm/citysense?logo=pypi&logoColor=white" alt="PyPI - Downloads"></a>
+    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/v/citysense?logo=pypi&logoColor=white&cacheSeconds=3600" alt="PyPI version"></a>
+    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/pyversions/citysense?logo=python&logoColor=white&cacheSeconds=3600" alt="PyPI - Python Version"></a>
+    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/wheel/citysense?logo=pypi&logoColor=white&cacheSeconds=3600" alt="PyPI - Wheel"></a>
+    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/format/citysense?logo=pypi&logoColor=white&cacheSeconds=3600" alt="PyPI - Format"></a>
+    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/status/citysense?logo=pypi&logoColor=white&cacheSeconds=3600" alt="PyPI - Status"></a>
+    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/dm/citysense?logo=pypi&logoColor=white&cacheSeconds=3600" alt="PyPI - Downloads"></a>
   </p>
 
   <!-- GitHub Stats -->
   <p>
-    <a href="https://github.com/olaflaitinen/citysense/stargazers"><img src="https://img.shields.io/github/stars/olaflaitinen/citysense?logo=github&logoColor=white" alt="GitHub stars"></a>
-    <a href="https://github.com/olaflaitinen/citysense/network/members"><img src="https://img.shields.io/github/forks/olaflaitinen/citysense?logo=github&logoColor=white" alt="GitHub forks"></a>
-    <a href="https://github.com/olaflaitinen/citysense/issues"><img src="https://img.shields.io/github/issues/olaflaitinen/citysense?logo=github&logoColor=white" alt="GitHub issues"></a>
-    <a href="https://github.com/olaflaitinen/citysense/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/olaflaitinen/citysense?logo=github&logoColor=white" alt="GitHub issues closed"></a>
-    <a href="https://github.com/olaflaitinen/citysense/pulls"><img src="https://img.shields.io/github/issues-pr/olaflaitinen/citysense?logo=github&logoColor=white" alt="GitHub PRs"></a>
-    <a href="https://github.com/olaflaitinen/citysense/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed/olaflaitinen/citysense?logo=github&logoColor=white" alt="GitHub PRs closed"></a>
-    <a href="https://github.com/olaflaitinen/citysense/graphs/contributors"><img src="https://img.shields.io/github/contributors/olaflaitinen/citysense?logo=github&logoColor=white" alt="GitHub contributors"></a>
-    <a href="https://github.com/olaflaitinen/citysense/commits/main"><img src="https://img.shields.io/github/last-commit/olaflaitinen/citysense?logo=github&logoColor=white" alt="GitHub last commit"></a>
-    <a href="https://github.com/olaflaitinen/citysense/commits/main"><img src="https://img.shields.io/github/commit-activity/m/olaflaitinen/citysense?logo=github&logoColor=white" alt="GitHub commit activity"></a>
-    <a href="https://github.com/olaflaitinen/citysense"><img src="https://img.shields.io/github/languages/code-size/olaflaitinen/citysense?logo=github&logoColor=white" alt="Code size"></a>
-    <a href="https://github.com/olaflaitinen/citysense"><img src="https://img.shields.io/github/languages/top/olaflaitinen/citysense?logo=python&logoColor=white" alt="Top language"></a>
-    <a href="https://github.com/olaflaitinen/citysense"><img src="https://img.shields.io/github/repo-size/olaflaitinen/citysense?logo=github&logoColor=white" alt="Repo size"></a>
+    <a href="https://github.com/olaflaitinen/citysense/stargazers"><img src="https://img.shields.io/github/stars/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="GitHub stars"></a>
+    <a href="https://github.com/olaflaitinen/citysense/network/members"><img src="https://img.shields.io/github/forks/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="GitHub forks"></a>
+    <a href="https://github.com/olaflaitinen/citysense/issues"><img src="https://img.shields.io/github/issues/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="GitHub issues"></a>
+    <a href="https://github.com/olaflaitinen/citysense/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="GitHub issues closed"></a>
+    <a href="https://github.com/olaflaitinen/citysense/pulls"><img src="https://img.shields.io/github/issues-pr/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="GitHub PRs"></a>
+    <a href="https://github.com/olaflaitinen/citysense/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="GitHub PRs closed"></a>
+    <a href="https://github.com/olaflaitinen/citysense/graphs/contributors"><img src="https://img.shields.io/github/contributors/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="GitHub contributors"></a>
+    <a href="https://github.com/olaflaitinen/citysense/commits/main"><img src="https://img.shields.io/github/last-commit/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="GitHub last commit"></a>
+    <a href="https://github.com/olaflaitinen/citysense/commits/main"><img src="https://img.shields.io/github/commit-activity/m/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="GitHub commit activity"></a>
+    <a href="https://github.com/olaflaitinen/citysense"><img src="https://img.shields.io/github/languages/code-size/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="Code size"></a>
+    <a href="https://github.com/olaflaitinen/citysense"><img src="https://img.shields.io/github/languages/top/olaflaitinen/citysense?logo=python&logoColor=white&cacheSeconds=3600" alt="Top language"></a>
+    <a href="https://github.com/olaflaitinen/citysense"><img src="https://img.shields.io/github/repo-size/olaflaitinen/citysense?logo=github&logoColor=white&cacheSeconds=3600" alt="Repo size"></a>
   </p>
 
   <!-- CI/CD & Quality -->
   <p>
-    <a href="https://github.com/olaflaitinen/citysense/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/ci.yml?branch=main&label=CI&logo=githubactions&logoColor=white" alt="CI"></a>
-    <a href="https://github.com/olaflaitinen/citysense/actions/workflows/release.yml"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/release.yml?branch=main&label=Release&logo=githubactions&logoColor=white" alt="Release CD"></a>
-    <a href="https://github.com/olaflaitinen/citysense/actions/workflows/scorecard.yml"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/scorecard.yml?branch=main&label=Scorecard&logo=githubactions&logoColor=white" alt="Scorecard CI"></a>
-    <a href="https://codecov.io/gh/olaflaitinen/citysense"><img src="https://img.shields.io/codecov/c/github/olaflaitinen/citysense?logo=codecov&logoColor=white" alt="Codecov"></a>
-    <a href="https://scorecard.dev/viewer/?uri=github.com/olaflaitinen/citysense"><img src="https://api.scorecard.dev/projects/github.com/olaflaitinen/citysense/badge?logo=openssf&logoColor=white" alt="OpenSSF Scorecard"></a>
-    <a href="https://www.bestpractices.dev/projects/12345"><img src="https://img.shields.io/cii/level/12345?logo=linuxfoundation&logoColor=white" alt="CII Best Practices"></a>
-    <a href="https://deepsource.io/gh/olaflaitinen/citysense/?ref=repository-badge"><img alt="DeepSource" title="DeepSource" src="https://deepsource.io/gh/olaflaitinen/citysense.svg/?label=active+issues&show_trend=true&token=xxxx"></a>
-    <a href="https://citysense.readthedocs.io"><img src="https://img.shields.io/readthedocs/citysense?logo=readthedocs&logoColor=white" alt="Read the Docs"></a>
-    <a href="https://opensource.org/licenses/EUPL-1.2"><img src="https://img.shields.io/badge/license-EUPL--1.2-green?logo=europeanunion&logoColor=white" alt="License"></a>
+    <a href="https://github.com/olaflaitinen/citysense/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/ci.yml?branch=main&label=CI&logo=githubactions&logoColor=white&cacheSeconds=3600" alt="CI"></a>
+    <a href="https://github.com/olaflaitinen/citysense/actions/workflows/release.yml"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/release.yml?branch=main&label=Release&logo=githubactions&logoColor=white&cacheSeconds=3600" alt="Release CD"></a>
+    <a href="https://github.com/olaflaitinen/citysense/actions/workflows/scorecard-analysis.yml"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/scorecard-analysis.yml?branch=main&label=Scorecard&logo=githubactions&logoColor=white&cacheSeconds=3600" alt="Scorecard CI"></a>
+    <a href="https://codecov.io/gh/olaflaitinen/citysense"><img src="https://img.shields.io/codecov/c/github/olaflaitinen/citysense?logo=codecov&logoColor=white&cacheSeconds=3600" alt="Codecov"></a>
+    <a href="https://scorecard.dev/viewer/?uri=github.com/olaflaitinen/citysense"><img src="https://api.scorecard.dev/projects/github.com/olaflaitinen/citysense/badge?logo=openssf&logoColor=white&cacheSeconds=3600" alt="OpenSSF Scorecard"></a>
+    <a href="https://www.bestpractices.dev/projects/12345"><img src="https://img.shields.io/cii/level/12345?logo=linuxfoundation&logoColor=white&cacheSeconds=3600" alt="CII Best Practices"></a>
+    <a href="https://deepsource.io/gh/olaflaitinen/citysense/?ref=repository-badge"><img alt="DeepSource" title="DeepSource" src="https://deepsource.io/gh/olaflaitinen/citysense.svg/?label=active+issues&show_trend=true"></a>
+    <a href="https://citysense.readthedocs.io"><img src="https://img.shields.io/readthedocs/citysense?logo=readthedocs&logoColor=white&cacheSeconds=3600" alt="Read the Docs"></a>
+    <a href="https://opensource.org/licenses/EUPL-1.2"><img src="https://img.shields.io/badge/license-EUPL--1.2-green?logo=europeanunion&logoColor=white&cacheSeconds=3600" alt="License"></a>
   </p>
 
   <!-- Code Style & Standards -->
   <p>
-    <a href="https://docs.astral.sh/ruff/"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" alt="Ruff"></a>
-    <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
-    <a href="https://mypy-lang.org/"><img src="https://img.shields.io/badge/type%20checker-mypy-2a6db2.svg?logo=python&logoColor=white" alt="mypy"></a>
-    <a href="https://pycqa.github.io/isort/"><img src="https://img.shields.io/badge/%20imports-isort-%231674b1?labelColor=ef8336&logo=python&logoColor=white" alt="isort"></a>
-    <a href="https://pre-commit.com/"><img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white" alt="Pre-commit"></a>
-    <a href="https://github.com/editorconfig/editorconfig"><img src="https://img.shields.io/badge/EditorConfig-enabled-cyan?logo=editorconfig&logoColor=white" alt="EditorConfig"></a>
-    <a href="https://pypi.org/project/bandit/"><img src="https://img.shields.io/badge/security-bandit-yellow.svg?logo=security&logoColor=white" alt="Security: bandit"></a>
+    <a href="https://docs.astral.sh/ruff/"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json&cacheSeconds=3600" alt="Ruff"></a>
+    <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg?cacheSeconds=3600" alt="Code style: black"></a>
+    <a href="https://mypy-lang.org/"><img src="https://img.shields.io/badge/type%20checker-mypy-2a6db2.svg?logo=python&logoColor=white&cacheSeconds=3600" alt="mypy"></a>
+    <a href="https://pycqa.github.io/isort/"><img src="https://img.shields.io/badge/%20imports-isort-%231674b1?labelColor=ef8336&logo=python&logoColor=white&cacheSeconds=3600" alt="isort"></a>
+    <a href="https://pre-commit.com/"><img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&cacheSeconds=3600" alt="Pre-commit"></a>
+    <a href="https://github.com/editorconfig/editorconfig"><img src="https://img.shields.io/badge/EditorConfig-enabled-cyan?logo=editorconfig&logoColor=white&cacheSeconds=3600" alt="EditorConfig"></a>
+    <a href="https://pypi.org/project/bandit/"><img src="https://img.shields.io/badge/security-bandit-yellow.svg?logo=security&logoColor=white&cacheSeconds=3600" alt="Security: bandit"></a>
   </p>
 
   <!-- Tech Stack -->
