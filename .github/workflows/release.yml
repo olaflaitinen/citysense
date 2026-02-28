@@ -20,7 +20,7 @@ jobs:
           python-version: "3.13"
 
       - name: Install build tools
-        run: pip install --no-cache-dir build
+        run: pip install --no-cache-dir --require-hashes -r .github/requirements-build.txt
 
       - name: Build package
         run: python -m build
@@ -37,6 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
+      attestations: write
     steps:
       - name: Download dists
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
@@ -50,6 +51,13 @@ jobs:
           inputs: >-
             ./dist/*.tar.gz
             ./dist/*.whl
+
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v3
+        with:
+          subject-path: |
+            dist/*.tar.gz
+            dist/*.whl
 
       - name: Upload signed dists
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v4
@@ -93,6 +101,6 @@ jobs:
           path: dist/
 
       - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e
         with:
           packages-dir: dist/

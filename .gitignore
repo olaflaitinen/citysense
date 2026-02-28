@@ -54,3 +54,6 @@ site/
 
 # mypy
 .mypy_cache/
+
+# Temp Dirs
+.tmp_*/

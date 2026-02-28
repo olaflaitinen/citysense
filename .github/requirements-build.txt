@@ -1,0 +1,7 @@
+# Pinned by hash for OpenSSF Scorecard Pinned-Dependencies check.
+# Generated for build 1.2.2 and its dependencies.
+# Update with: pip download build==1.2.2 -d /tmp/d && pip hash /tmp/d/*.whl
+build==1.2.2 --hash=sha256:277ccc71619d98afdd841a0e96ac9fe1593b823af481d3b0cea748e8894e0613
+packaging==26.0 --hash=sha256:b36f1fef9334a5588b4166f8bcd26a14e521f2b55e6b9de3aaa80d3ff7a37529
+pyproject_hooks==1.2.0 --hash=sha256:9e5c6bfa8dcc30091c74b0cf803c81fdd29d94f01992a7707bc97babb1141913
+colorama==0.4.6 --hash=sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6
