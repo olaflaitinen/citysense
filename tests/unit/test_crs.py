@@ -1,8 +1,7 @@
 """Unit tests for CRS operations."""
 
-import pytest
-
 import geopandas as gpd
+import pytest
 from shapely.geometry import Point
 
 from citysense.geo.crs import get_national_crs, normalize

@@ -34,10 +34,11 @@ def test_polyfill_with_shapely() -> None:
 
 def test_k_ring_buffer() -> None:
     """Test k-ring neighbourhood."""
-    cells = polyfill(
-        {"type": "Polygon", "coordinates": [[[24.9, 60.1], [25, 60.1], [25, 60.2], [24.9, 60.2], [24.9, 60.1]]]},
-        9,
-    )
+    geojson = {
+        "type": "Polygon",
+        "coordinates": [[[24.9, 60.1], [25, 60.1], [25, 60.2], [24.9, 60.2], [24.9, 60.1]]],
+    }
+    cells = polyfill(geojson, 9)
     cell = next(iter(cells))
     ring = k_ring_buffer(cell, 1)
     assert len(ring) > 1
@@ -46,20 +47,22 @@ def test_k_ring_buffer() -> None:
 
 def test_compact() -> None:
     """Test H3 compact."""
-    cells = polyfill(
-        {"type": "Polygon", "coordinates": [[[24.9, 60.1], [25, 60.1], [25, 60.2], [24.9, 60.2], [24.9, 60.1]]]},
-        9,
-    )
+    geojson = {
+        "type": "Polygon",
+        "coordinates": [[[24.9, 60.1], [25, 60.1], [25, 60.2], [24.9, 60.2], [24.9, 60.1]]],
+    }
+    cells = polyfill(geojson, 9)
     compacted = compact(cells)
     assert len(compacted) <= len(cells) or len(compacted) >= 1
 
 
 def test_h3_to_centroid() -> None:
     """Test H3 cell centroid."""
-    cells = polyfill(
-        {"type": "Polygon", "coordinates": [[[24.9, 60.1], [25, 60.1], [25, 60.2], [24.9, 60.2], [24.9, 60.1]]]},
-        9,
-    )
+    geojson = {
+        "type": "Polygon",
+        "coordinates": [[[24.9, 60.1], [25, 60.1], [25, 60.2], [24.9, 60.2], [24.9, 60.1]]],
+    }
+    cells = polyfill(geojson, 9)
     cell = next(iter(cells))
     lat, lon = h3_to_centroid(cell)
     assert -90 <= lat <= 90

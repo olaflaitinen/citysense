@@ -1,6 +1,6 @@
 """Unit tests for service registry."""
 
-from citysense.core.registry import CitySenseRegistry, get_registry, init
+from citysense.core.registry import get_registry, init
 
 
 def test_init_default() -> None:

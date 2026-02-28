@@ -1,7 +1,5 @@
 """Unit tests for exception hierarchy."""
 
-import pytest
-
 from citysense.core.exceptions import (
     BBoxTooLargeError,
     CDSEAuthError,
@@ -18,9 +16,9 @@ from citysense.core.exceptions import (
     MapillaryQuotaError,
     MCPError,
     PilotConfigError,
+    RAGError,
     ResourceNotFoundError,
     RetrievalError,
-    RAGError,
     SentinelTileUnavailableError,
     SpatialError,
     ToolExecutionError,
