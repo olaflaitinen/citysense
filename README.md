@@ -20,6 +20,8 @@
   <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/wheel/citysense?style=flat&logo=python&logoColor=white" alt="Wheel"></a>
   <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/status/citysense?style=flat&logo=pypi&logoColor=white" alt="Status"></a>
   <a href="https://github.com/olaflaitinen/citysense/actions"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/ci.yml?branch=main&style=flat&logo=githubactions&logoColor=white&label=CI" alt="CI"></a>
+  <a href="https://securityscorecards.dev/viewer/?uri=github.com/olaflaitinen/citysense"><img src="https://api.securityscorecards.dev/projects/github.com/olaflaitinen/citysense/badge?style=flat" alt="OpenSSF Scorecard"></a>
+  <a href="https://codecov.io/gh/olaflaitinen/citysense"><img src="https://img.shields.io/codecov/c/github/olaflaitinen/citysense?style=flat&logo=codecov&logoColor=white&label=coverage" alt="Coverage"></a>
   <a href="https://github.com/olaflaitinen/citysense/stargazers"><img src="https://img.shields.io/github/stars/olaflaitinen/citysense?style=social" alt="Stars"></a>
   <a href="https://github.com/olaflaitinen/citysense/network"><img src="https://img.shields.io/github/forks/olaflaitinen/citysense?style=social" alt="Forks"></a>
   <a href="https://github.com/olaflaitinen/citysense/issues"><img src="https://img.shields.io/github/issues/olaflaitinen/citysense?style=social" alt="Issues"></a>

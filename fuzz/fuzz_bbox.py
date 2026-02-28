@@ -1,6 +1,5 @@
 """Fuzz target for citysense.geo.bbox.BBox."""
 
-import struct
 import sys
 
 import atheris
