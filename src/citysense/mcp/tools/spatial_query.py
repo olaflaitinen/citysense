@@ -31,7 +31,7 @@ async def query_spatial_context_impl(
         max_results=max_results,
     )
     return {
-        "citysense_version": "0.2.0",
+        "citysense_version": "0.2.1",
         "query": result.query,
         "country": result.country,
         "city": result.city,

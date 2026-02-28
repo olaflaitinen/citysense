@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "citysense"
-version = "0.2.0"
+version = "0.2.1"
 description = "Geospatial RAG and MCP server for urban AI development; WUF13 aligned."
 readme = { file = "README.md", content-type = "text/markdown" }
 keywords = ["geospatial", "rag", "mcp", "urban", "wuf13", "sdg11", "gis"]
