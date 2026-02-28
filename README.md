@@ -30,8 +30,8 @@
     <a href="https://sdgs.un.org/goals/goal11"><img src="https://img.shields.io/badge/UN-SDG%2011-009EDB" alt="SDG 11"></a>
     <a href="https://www.openstreetmap.org/"><img src="https://img.shields.io/badge/data-OpenStreetMap-7EBC6F?logo=openstreetmap&logoColor=white" alt="OpenStreetMap"></a>
     <a href="https://qdrant.tech/"><img src="https://img.shields.io/badge/vector%20store-Qdrant-0094FF?logo=qdrant&logoColor=white" alt="Qdrant"></a>
-    <a href="https://shapely.readthedocs.io/"><img src="https://img.shields.io/badge/geometry-Shapely-2.1%2B-3776AB?logo=python&logoColor=white" alt="Shapely"></a>
-    <a href="https://geopandas.org/"><img src="https://img.shields.io/badge/geospatial-GeoPandas-1.1%2B-3776AB?logo=python&logoColor=white" alt="GeoPandas"></a>
+    <a href="https://shapely.readthedocs.io/"><img src="https://img.shields.io/badge/geometry-Shapely%202.1%2B-3776AB?logo=python&logoColor=white" alt="Shapely"></a>
+    <a href="https://geopandas.org/"><img src="https://img.shields.io/badge/geospatial-GeoPandas%201.1%2B-3776AB?logo=python&logoColor=white" alt="GeoPandas"></a>
   </p>
 </div>
 
