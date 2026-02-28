@@ -1,0 +1,22 @@
+# CitySense configuration example
+# Copy to citysense.toml or set via CITYSENSE_* environment variables
+
+[pilot]
+country = "fi"
+
+[vector_store]
+url = "http://localhost:6333"
+collection_prefix = "cs"
+
+[embedding]
+model = "BAAI/bge-m3"
+dim = 1024
+
+[mapillary]
+access_token = ""
+max_images_per_bbox = 50
+
+[cdse]
+client_id = ""
+client_secret = ""
+stac_url = "https://stac.dataspace.copernicus.eu"

@@ -1,0 +1,135 @@
+[build-system]
+requires = ["setuptools>=75.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "citysense"
+dynamic = ["version"]
+description = "Geospatial RAG and MCP server for urban AI development; WUF13 aligned."
+readme = { file = "README.md", content-type = "text/markdown" }
+keywords = ["geospatial", "rag", "mcp", "urban", "wuf13", "sdg11", "gis"]
+license = { text = "EUPL-1.2" }
+requires-python = ">=3.12"
+authors = [
+    { name = "CitySense Contributors" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "shapely>=2.1.2,<3.0",
+    "geopandas>=1.1.2,<2.0",
+    "pyproj>=3.7.1,<4.0",
+    "pyogrio>=0.10.0",
+    "numpy>=2.2.0,<3.0",
+    "pandas>=2.3.0,<3.0",
+    "h3>=4.1.0,<5.0",
+    "rasterio>=1.4.3,<2.0",
+    "xarray>=2023.1.0",
+    "pydantic>=2.12.0,<3.0",
+    "pydantic-settings>=2.7.0,<3.0",
+    "qdrant-client>=1.17.0,<2.0",
+    "fastembed>=0.4.2,<1.0",
+    "rank-bm25>=0.2.2",
+    "litellm>=1.57.0,<2.0",
+    "mcp>=1.4.0,<2.0",
+    "pystac-client>=0.8.5,<1.0",
+    "rio-cogeo>=5.4.0,<6.0",
+    "httpx>=0.28.0,<1.0",
+    "Pillow>=11.1.0,<12.0",
+    "APScheduler>=3.11.0,<4.0",
+    "structlog>=25.1.0,<26.0",
+    "typer>=0.15.0,<1.0",
+]
+
+[project.optional-dependencies]
+build = [
+    "build>=1.0.0",
+    "twine>=5.0.0",
+]
+clip = [
+    "transformers>=4.48.3,<5.0",
+    "torch>=2.5.1,<3.0",
+]
+sentinelhub = [
+    "sentinelhub>=3.10.0,<4.0",
+]
+dev = [
+    "ruff>=0.9.0",
+    "mypy>=1.14.0",
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.25.0",
+    "pytest-cov>=6.0.0",
+    "pre-commit>=4.1.0",
+    "mkdocs-material>=9.6.0",
+    "mkdocstrings[python]>=0.27.0",
+]
+
+[project.scripts]
+citysense = "citysense.cli.main:app"
+
+[project.urls]
+Homepage = "https://github.com/olaflaitinen/citysense"
+Documentation = "https://citysense.readthedocs.io"
+Repository = "https://github.com/olaflaitinen/citysense"
+Issues = "https://github.com/olaflaitinen/citysense/issues"
+Changelog = "https://github.com/olaflaitinen/citysense/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools-scm]
+version_file = "src/citysense/_version.py"
+fallback_version = "0.2.0"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "ANN", "B", "C4", "SIM"]
+ignore = ["ANN401"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "--cov=citysense --cov-report=xml --cov-report=term-missing"
+filterwarnings = [
+    "ignore:Conversion of an array with ndim > 0 to a scalar is deprecated:DeprecationWarning",
+    "ignore:The 'shapely.geos' module is deprecated:DeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["src/citysense"]
+omit = [
+    "*/tests/*",
+    "*/_version.py",
+    "*/connectors/sentinel.py",
+    "*/connectors/mapillary.py",
+    "*/connectors/kartaview.py",
+    "*/rag/pipeline.py",
+    "*/rag/retriever.py",
+    "*/rag/embedder.py",
+    "*/rag/reranker.py",
+    "*/rag/index/*",
+    "*/geo/raster.py",
+    "*/mcp/*",
+    "*/cli/main.py",
+    "*/rag/__init__.py",
+]

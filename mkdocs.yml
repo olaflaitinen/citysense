@@ -1,0 +1,52 @@
+site_name: CitySense
+site_description: Geospatial RAG and MCP server for urban AI development
+site_url: https://citysense.readthedocs.io
+repo_url: c
+repo_name: olaflaitinen/citysense
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences
+  - tables
+  - admonition
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  version:
+    provider: mike
+
+nav:
+  - Home: index.md
+  - Quick Start: quickstart.md
+  - User Guide:
+    - Installation: guides/installation.md
+    - Configuration: guides/configuration.md
+    - MCP Integration: guides/mcp.md
+    - Cursor/Claude: mcp-integration.md
+  - Reference:
+    - Mathematical Foundations: reference/mathematical-foundations.md
+  - Contributing:
+    - Contributing: ../CONTRIBUTING.md
+    - Changelog: ../CHANGELOG.md

@@ -1,0 +1,1 @@
+"""Typer CLI entry point."""
