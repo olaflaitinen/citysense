@@ -1,0 +1,39 @@
+name: Fuzzing
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  fuzz:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - fuzz_intent
+          - fuzz_bbox
+          - fuzz_metrics
+          - fuzz_validation
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install atheris
+          pip install -e .
+
+      - name: Run fuzzer (${{ matrix.target }})
+        run: |
+          timeout 120 python fuzz/${{ matrix.target }}.py -atheris_runs=100000 || true
