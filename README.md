@@ -1,36 +1,39 @@
-<p align="center">
+<div align="center">
   <img src="docs/assets/logo.svg" alt="CitySense Logo" width="320"/>
-</p>
 
-# CitySense
+  <h1>CitySense</h1>
 
-[![PyPI version](https://img.shields.io/pypi/v/citysense?logo=pypi&logoColor=white)](https://pypi.org/project/citysense/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/citysense?logo=python&logoColor=white)](https://pypi.org/project/citysense/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/citysense?logo=pypi&logoColor=white)](https://pypi.org/project/citysense/)
-[![PyPI - Format](https://img.shields.io/pypi/format/citysense)](https://pypi.org/project/citysense/)
-[![PyPI - Status](https://img.shields.io/pypi/status/citysense)](https://pypi.org/project/citysense/)
-[![PyPI - Wheel](https://img.shields.io/pypi/wheel/citysense)](https://pypi.org/project/citysense/)
-[![CI](https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/ci.yml?branch=main&logo=githubactions&logoColor=white)](https://github.com/olaflaitinen/citysense/actions)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/olaflaitinen/citysense/badge)](https://scorecard.dev/viewer/?uri=github.com/olaflaitinen/citysense)
-[![codecov](https://codecov.io/gh/olaflaitinen/citysense/graph/badge.svg)](https://codecov.io/gh/olaflaitinen/citysense)
-[![Python](https://img.shields.io/badge/python-3.12%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
-[![License](https://img.shields.io/badge/license-EUPL--1.2-green?logo=europeanunion&logoColor=white)](LICENSE)
-[![Ruff](https://img.shields.io/badge/code%20style-ruff-000000?logo=ruff&logoColor=white)](https://docs.astral.sh/ruff/)
-[![mypy](https://img.shields.io/badge/type%20checker-mypy-blue?logo=python&logoColor=white)](https://mypy-lang.org/)
-[![Read the Docs](https://img.shields.io/readthedocs/citysense?logo=readthedocs&logoColor=white)](https://citysense.readthedocs.io)
-[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://pre-commit.com/)
-[![Qdrant](https://img.shields.io/badge/vector%20store-Qdrant-0094FF?logo=qdrant&logoColor=white)](https://qdrant.tech/)
-[![OpenStreetMap](https://img.shields.io/badge/data-OpenStreetMap-7EBC6F?logo=openstreetmap&logoColor=white)](https://www.openstreetmap.org/)
-[![SDG 11](https://img.shields.io/badge/UN-SDG%2011-009EDB)](https://sdgs.un.org/goals/goal11)
-[![MCP](https://img.shields.io/badge/protocol-MCP-6366F1)](https://modelcontextprotocol.io/)
-[![Shapely](https://img.shields.io/badge/geometry-Shapely-2.1%2B-3776AB?logo=python&logoColor=white)](https://shapely.readthedocs.io/)
-[![GeoPandas](https://img.shields.io/badge/geospatial-GeoPandas-1.1%2B-3776AB?logo=python&logoColor=white)](https://geopandas.org/)
+  <p><b>Geospatial RAG and MCP Server Library for Urban AI Development</b></p>
+  <i>Specification v0.2.1 | February 2026 | WUF13 Aligned</i>
 
+  <br><br>
 
+  <!-- Package & CI Status -->
+  <p>
+    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/v/citysense?logo=pypi&logoColor=white" alt="PyPI version"></a>
+    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/pyversions/citysense?logo=python&logoColor=white" alt="PyPI - Python Version"></a>
+    <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/dm/citysense?logo=pypi&logoColor=white" alt="PyPI - Downloads"></a>
+    <a href="https://github.com/olaflaitinen/citysense/actions"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/ci.yml?branch=main&logo=githubactions&logoColor=white" alt="CI"></a>
+    <a href="https://codecov.io/gh/olaflaitinen/citysense"><img src="https://codecov.io/gh/olaflaitinen/citysense/graph/badge.svg" alt="codecov"></a>
+    <a href="https://scorecard.dev/viewer/?uri=github.com/olaflaitinen/citysense"><img src="https://api.scorecard.dev/projects/github.com/olaflaitinen/citysense/badge" alt="OpenSSF Scorecard"></a>
+    <a href="https://citysense.readthedocs.io"><img src="https://img.shields.io/readthedocs/citysense?logo=readthedocs&logoColor=white" alt="Read the Docs"></a>
+    <br>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-EUPL--1.2-green?logo=europeanunion&logoColor=white" alt="License"></a>
+    <a href="https://docs.astral.sh/ruff/"><img src="https://img.shields.io/badge/code%20style-ruff-000000?logo=ruff&logoColor=white" alt="Ruff"></a>
+    <a href="https://mypy-lang.org/"><img src="https://img.shields.io/badge/type%20checker-mypy-blue?logo=python&logoColor=white" alt="mypy"></a>
+    <a href="https://pre-commit.com/"><img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white" alt="Pre-commit"></a>
+  </p>
 
-**Geospatial RAG and MCP Server Library for Urban AI Development**
-
-Specification v0.2.0 | February 2026 | WUF13 Aligned
+  <!-- Tech Stack & Standards -->
+  <p>
+    <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/protocol-MCP-6366F1" alt="MCP"></a>
+    <a href="https://sdgs.un.org/goals/goal11"><img src="https://img.shields.io/badge/UN-SDG%2011-009EDB" alt="SDG 11"></a>
+    <a href="https://www.openstreetmap.org/"><img src="https://img.shields.io/badge/data-OpenStreetMap-7EBC6F?logo=openstreetmap&logoColor=white" alt="OpenStreetMap"></a>
+    <a href="https://qdrant.tech/"><img src="https://img.shields.io/badge/vector%20store-Qdrant-0094FF?logo=qdrant&logoColor=white" alt="Qdrant"></a>
+    <a href="https://shapely.readthedocs.io/"><img src="https://img.shields.io/badge/geometry-Shapely-2.1%2B-3776AB?logo=python&logoColor=white" alt="Shapely"></a>
+    <a href="https://geopandas.org/"><img src="https://img.shields.io/badge/geospatial-GeoPandas-1.1%2B-3776AB?logo=python&logoColor=white" alt="GeoPandas"></a>
+  </p>
+</div>
 
 ---
 
