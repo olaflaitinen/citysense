@@ -59,11 +59,11 @@ jobs:
             dist/*.tar.gz
             dist/*.whl
 
-      - name: Upload signed dists
+      - name: Upload signatures
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v4
         with:
-          name: dist-signed
-          path: dist/
+          name: signatures
+          path: dist/*.sigstore.json
 
   release:
     name: Create GitHub Release
@@ -75,7 +75,13 @@ jobs:
       - name: Download signed dists
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
-          name: dist-signed
+          name: dist
+          path: dist/
+
+      - name: Download signatures
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: signatures
           path: dist/
 
       - name: Create release
@@ -94,10 +100,10 @@ jobs:
       name: pypi
       url: https://pypi.org/project/citysense/
     steps:
-      - name: Download signed dists
+      - name: Download unsigned dists
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
-          name: dist-signed
+          name: dist
           path: dist/
 
       - name: Publish to PyPI
