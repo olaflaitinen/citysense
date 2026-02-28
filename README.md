@@ -157,21 +157,23 @@ CitySense adds a third observational layer on top of traditional vector geospati
 ### System Stack
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           CitySense Stack                                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  CLI (citysense)                                                             │
-│  pilot init | index build | query | serve | export | imagery | watch         │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  MCP Server (stdio/SSE)              │  Geospatial RAG Pipeline               │
-│  Tools: query_spatial_context,      │  Intent Parser → H3 Filter →            │
-│  analyze_housing_zone,              │  Dense Retrieval + Sparse (BM25) →       │
-│  get_resilience_score, bounds       │  RRF Fusion → Reranker → Assembler      │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  Connectors: OSM, Sentinel-2, Mapillary, KartaView, CDSE                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  Vector Store (Qdrant)  │  Geometry (Shapely, GeoPandas, H3)                 │
-└─────────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│                       CitySense Stack                        │
+├──────────────────────────────────────────────────────────────┤
+│  CLI (citysense)                                             │
+│  pilot init | index build | query | serve | export | watch   │
+├───────────────────────────────┬──────────────────────────────┤
+│  MCP Server (stdio/SSE)       │  Geospatial RAG Pipeline     │
+│  - query_spatial_context      │  Intent Parser               │
+│  - analyze_housing_zone       │  -> H3 Filter                │
+│  - get_resilience_score       │  -> Dense + Sparse (BM25)    │
+│  - get_bounds                 │  -> RRF Fusion -> Reranker   │
+│                               │  -> Assembler                │
+├───────────────────────────────┴──────────────────────────────┤
+│  Connectors: OSM, Sentinel-2, Mapillary, KartaView, CDSE    │
+├──────────────────────────────────────────────────────────────┤
+│  Vector Store (Qdrant)  |  Geometry (Shapely, GeoPandas, H3) │
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ### Module Structure
@@ -735,20 +737,20 @@ H3 cells crossing the antimeridian require special handling. CitySense pre-filte
 
 ```
 OSM Overpass / STAC / Connectors
-        │
-        ▼
+          |
+          v
 Geometry + Metadata (GeoDataFrame)
-        │
-        ▼
-H3 Cell Assignment (resolution 7 default)
-        │
-        ▼
+          |
+          v
+H3 Cell Assignment (resolution 7)
+          |
+          v
 Chunking + Text Serialization
-        │
-        ▼
+          |
+          v
 Dense Embedding (fastembed) + Sparse (BM25)
-        │
-        ▼
+          |
+          v
 Qdrant Upsert (vectors + payload)
 ```
 
@@ -756,23 +758,23 @@ Qdrant Upsert (vectors + payload)
 
 ```
 Natural Language Query
-        │
-        ▼
-parse_intent() → SpatialIntent
-        │
-        ▼
-H3 Filter (bbox → H3 cells)
-        │
-        ▼
+          |
+          v
+parse_intent() -> SpatialIntent
+          |
+          v
+H3 Filter (bbox -> H3 cells)
+          |
+          v
 Dense + Sparse Retrieval (top-k each)
-        │
-        ▼
+          |
+          v
 RRF Fusion (k=60)
-        │
-        ▼
+          |
+          v
 Reranker (optional)
-        │
-        ▼
+          |
+          v
 Assembled Context (GeoJSON, summary)
 ```
 
