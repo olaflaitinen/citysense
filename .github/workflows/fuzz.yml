@@ -31,8 +31,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install atheris
-          pip install -e .
+          pip install --no-cache-dir atheris==3.0.0
+          pip install --no-cache-dir -e .
 
       - name: Run fuzzer (${{ matrix.target }})
         run: |
