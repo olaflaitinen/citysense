@@ -8,12 +8,11 @@ from citysense.mcp.tools.spatial_query import query_spatial_context_impl
 
 app = FastMCP(
     name="citysense",
-    version="0.2.0",
     instructions="Urban geospatial intelligence server; WUF13 and SDG 11 aligned.",
 )
 
 
-@app.tool()  # type: ignore[untyped-decorator]
+@app.tool()
 async def query_spatial_context(
     query: str,
     country: str | None = None,

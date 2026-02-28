@@ -26,4 +26,4 @@ def embed_texts(texts: list[str], model: str = "BAAI/bge-m3") -> list[list[float
         List of embedding vectors (1024-dim for bge-m3).
     """
     embedder = get_embedder(model)
-    return list(embedder.embed(texts))
+    return [emb.tolist() for emb in embedder.embed(texts)]

@@ -104,7 +104,7 @@ class SentinelConnector(BaseConnector):
             datetime=datetime_range,
         )
         if collection == "SENTINEL-2-L2A":
-            search = search.filter("lte", "eo:cloud_cover", max_cloud_cover)
+            search = search.filter("lte", "eo:cloud_cover", max_cloud_cover)  # type: ignore[attr-defined]
         items = list(search.items())[:limit]
         return [
             {
@@ -113,7 +113,7 @@ class SentinelConnector(BaseConnector):
                 "bbox": item.bbox,
                 "geometry": item.geometry,
                 "assets": list(item.assets.keys()),
-                "cloud_cover": item.extra.get("eo:cloud_cover"),
+                "cloud_cover": item.properties.get("eo:cloud_cover") if item.properties else None,
             }
             for item in items
         ]

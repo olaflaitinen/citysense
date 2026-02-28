@@ -4,11 +4,17 @@
 
 # CitySense
 
+[![PyPI version](https://img.shields.io/pypi/v/citysense?logo=pypi&logoColor=white)](https://pypi.org/project/citysense/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/citysense?logo=python&logoColor=white)](https://pypi.org/project/citysense/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/citysense?logo=pypi&logoColor=white)](https://pypi.org/project/citysense/)
+[![PyPI - Format](https://img.shields.io/pypi/format/citysense)](https://pypi.org/project/citysense/)
+[![PyPI - License](https://img.shields.io/pypi/l/citysense)](https://pypi.org/project/citysense/)
+[![PyPI - Status](https://img.shields.io/pypi/status/citysense)](https://pypi.org/project/citysense/)
+[![PyPI - Wheel](https://img.shields.io/pypi/wheel/citysense)](https://pypi.org/project/citysense/)
 [![CI](https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/ci.yml?branch=main&logo=githubactions&logoColor=white)](https://github.com/olaflaitinen/citysense/actions)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/olaflaitinen/citysense/badge)](https://scorecard.dev/viewer/?uri=github.com/olaflaitinen/citysense)
 [![codecov](https://codecov.io/gh/olaflaitinen/citysense/graph/badge.svg)](https://codecov.io/gh/olaflaitinen/citysense)
 [![Python](https://img.shields.io/badge/python-3.12%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
-[![PyPI](https://img.shields.io/pypi/v/citysense?logo=pypi&logoColor=white)](https://pypi.org/project/citysense/)
 [![License](https://img.shields.io/badge/license-EUPL--1.2-green?logo=europeanunion&logoColor=white)](LICENSE)
 [![Ruff](https://img.shields.io/badge/code%20style-ruff-000000?logo=ruff&logoColor=white)](https://docs.astral.sh/ruff/)
 [![mypy](https://img.shields.io/badge/type%20checker-mypy-blue?logo=python&logoColor=white)](https://mypy-lang.org/)
@@ -20,6 +26,8 @@
 [![MCP](https://img.shields.io/badge/protocol-MCP-6366F1)](https://modelcontextprotocol.io/)
 [![Shapely](https://img.shields.io/badge/geometry-Shapely-2.1%2B-3776AB?logo=python&logoColor=white)](https://shapely.readthedocs.io/)
 [![GeoPandas](https://img.shields.io/badge/geospatial-GeoPandas-1.1%2B-3776AB?logo=python&logoColor=white)](https://geopandas.org/)
+
+
 
 **Geospatial RAG and MCP Server Library for Urban AI Development**
 

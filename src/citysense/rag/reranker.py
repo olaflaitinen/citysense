@@ -3,7 +3,7 @@
 from typing import Any
 
 try:
-    from fastembed import TextCrossEncoder
+    from fastembed import TextCrossEncoder  # type: ignore[attr-defined]
 except ImportError:
     TextCrossEncoder = None
 
