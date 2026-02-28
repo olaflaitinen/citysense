@@ -968,14 +968,3 @@ EUPL-1.2. See [LICENSE](LICENSE).
 ## Acknowledgments
 
 CitySense builds on open standards and community data: OpenStreetMap contributors, Copernicus Programme, Mapillary, KartaView, Qdrant, and the Model Context Protocol initiative. Pilot country configurations align with national spatial data infrastructures and WUF13 dialogue priorities.
-
----
-
-## Document Conventions
-
-| Convention | Usage |
-|------------|-------|
-| LaTeX | Mathematical formulas use $...$ (inline) and $$...$$ (block). Renders on Read the Docs. |
-| Code blocks | Bash for CLI; Python for API examples. |
-| Tables | Markdown tables for structured reference data. |
-| Links | Relative for in-repo; absolute for external. |
