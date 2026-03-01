@@ -3,28 +3,34 @@
 
   <!-- Partner Logos -->
   <p>
-    <sub><b>Partners</b></sub><br>
-    <img src="docs/assets/partners/unh_sqr_logo.svg" alt="UN-Habitat Logo" height="34"/>
-    <img src="docs/assets/partners/wuf-logo.svg" alt="World Urban Forum Logo" height="34"/>
+    <sub><b>PARTNERS</b></sub><br>
+    <img src="docs/assets/partners/unh_sqr_logo.svg" alt="UN-Habitat Logo" height="34"/>&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="docs/assets/partners/wuf-logo.svg" alt="World Urban Forum Logo" height="34"/>&nbsp;&nbsp;&nbsp;&nbsp;
     <img src="docs/assets/partners/arxkom_logo_en.svg" alt="Arxkom Logo" height="34"/>
   </p>
 
   <!-- Mini Flags -->
   <p>
-    <sub><b>Pilot Flags</b></sub><br>
-    <img src="https://flagcdn.com/16x12/az.png" alt="Azerbaijan flag" width="16" height="12"/>
-    <img src="https://flagcdn.com/16x12/fi.png" alt="Finland flag" width="16" height="12"/>
-    <img src="https://flagcdn.com/16x12/se.png" alt="Sweden flag" width="16" height="12"/>
-    <img src="https://flagcdn.com/16x12/dk.png" alt="Denmark flag" width="16" height="12"/>
+    <sub><b>PILOT FLAGS</b></sub><br>
+    <img src="https://flagcdn.com/16x12/az.png" alt="Azerbaijan flag" width="16" height="12"/>&nbsp;
+    <img src="https://flagcdn.com/16x12/fi.png" alt="Finland flag" width="16" height="12"/>&nbsp;
+    <img src="https://flagcdn.com/16x12/se.png" alt="Sweden flag" width="16" height="12"/>&nbsp;
+    <img src="https://flagcdn.com/16x12/dk.png" alt="Denmark flag" width="16" height="12"/>&nbsp;
     <img src="https://flagcdn.com/16x12/no.png" alt="Norway flag" width="16" height="12"/>
   </p>
 
   <h1>CitySense</h1>
 
   <p><b>Geospatial RAG and MCP Server Library for Urban AI Development</b></p>
+  <p>
+    <a href="https://citysense.readthedocs.io">Documentation</a> |
+    <a href="https://pypi.org/project/citysense/">PyPI</a> |
+    <a href="https://github.com/olaflaitinen/citysense/issues">Issues</a> |
+    <a href="https://modelcontextprotocol.io/">MCP</a>
+  </p>
   <i>Specification v0.2.1 | February 2026 | WUF13 Aligned</i>
 
-  <br><br>
+  <br>
 
   <!-- Project Status & PyPI -->
   <p>
