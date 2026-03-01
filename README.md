@@ -1,38 +1,41 @@
 <div align="center">
   <img src="docs/assets/logo.svg" alt="CitySense Logo" width="320"/>
 
-  <!-- Partner Logos -->
-  <p>
-    <sub><b>PARTNERS</b></sub><br>
-    <img src="docs/assets/partners/unh_sqr_logo.svg" alt="UN-Habitat Logo" height="34"/>&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="docs/assets/partners/wuf-logo.svg" alt="World Urban Forum Logo" height="34"/>&nbsp;&nbsp;&nbsp;&nbsp;
-    <img src="docs/assets/partners/arxkom_logo_en.svg" alt="Arxkom Logo" height="34"/>
-  </p>
-
-  <!-- Mini Flags -->
-  <p>
-    <sub><b>PILOT FLAGS</b></sub><br>
-    <img src="https://flagcdn.com/16x12/az.png" alt="Azerbaijan flag" width="16" height="12"/>&nbsp;
-    <img src="https://flagcdn.com/16x12/fi.png" alt="Finland flag" width="16" height="12"/>&nbsp;
-    <img src="https://flagcdn.com/16x12/se.png" alt="Sweden flag" width="16" height="12"/>&nbsp;
-    <img src="https://flagcdn.com/16x12/dk.png" alt="Denmark flag" width="16" height="12"/>&nbsp;
-    <img src="https://flagcdn.com/16x12/no.png" alt="Norway flag" width="16" height="12"/>
-  </p>
-
   <h1>CitySense</h1>
 
-  <p><b>Geospatial RAG and MCP Server Library for Urban AI Development</b></p>
+  <p><b>Geospatial RAG + MCP Toolkit for Urban Intelligence</b></p>
+  <p><sub>Built for SDG 11 workflows, pilot countries, and research-grade city analytics.</sub></p>
+
+  <p><sub><b>QUICK LINKS</b></sub></p>
   <p>
     <a href="https://citysense.readthedocs.io">Documentation</a> |
     <a href="https://pypi.org/project/citysense/">PyPI</a> |
     <a href="https://github.com/olaflaitinen/citysense/issues">Issues</a> |
     <a href="https://modelcontextprotocol.io/">MCP</a>
   </p>
-  <i>Specification v0.2.1 | February 2026 | WUF13 Aligned</i>
+
+  <!-- Partner Logos -->
+  <p>
+    <sub><b>PARTNERS</b></sub><br>
+    <img src="docs/assets/partners/unh_sqr_logo.svg" alt="UN-Habitat Logo" height="34"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="docs/assets/partners/wuf-logo.svg" alt="World Urban Forum Logo" height="34"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="docs/assets/partners/arxkom_logo_en.svg" alt="Arxkom Logo" height="34"/>
+  </p>
+
+  <!-- Mini Flags -->
+  <p>
+    <sub><b>PILOT COUNTRIES</b></sub><br>
+    <img src="https://flagcdn.com/16x12/az.png" alt="Azerbaijan flag" width="16" height="12"/> <sub>AZ</sub>&nbsp;&nbsp;
+    <img src="https://flagcdn.com/16x12/fi.png" alt="Finland flag" width="16" height="12"/> <sub>FI</sub>&nbsp;&nbsp;
+    <img src="https://flagcdn.com/16x12/se.png" alt="Sweden flag" width="16" height="12"/> <sub>SE</sub>&nbsp;&nbsp;
+    <img src="https://flagcdn.com/16x12/dk.png" alt="Denmark flag" width="16" height="12"/> <sub>DK</sub>&nbsp;&nbsp;
+    <img src="https://flagcdn.com/16x12/no.png" alt="Norway flag" width="16" height="12"/> <sub>NO</sub>
+  </p>
 
   <br>
 
   <!-- Project Status & PyPI -->
+  <p><sub><b>PACKAGE</b></sub></p>
   <p>
     <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/v/citysense?logo=pypi&logoColor=white&style=flat&cacheSeconds=3600" alt="PyPI version"></a>
     <a href="https://pypi.org/project/citysense/"><img src="https://img.shields.io/pypi/pyversions/citysense?logo=python&logoColor=white&style=flat&cacheSeconds=3600" alt="PyPI - Python Version"></a>
@@ -43,6 +46,7 @@
   </p>
 
   <!-- GitHub Stats -->
+  <p><sub><b>REPOSITORY</b></sub></p>
   <p>
     <a href="https://github.com/olaflaitinen/citysense/stargazers"><img src="https://img.shields.io/github/stars/olaflaitinen/citysense?logo=github&logoColor=white&style=flat&cacheSeconds=3600" alt="GitHub stars"></a>
     <a href="https://github.com/olaflaitinen/citysense/network/members"><img src="https://img.shields.io/github/forks/olaflaitinen/citysense?logo=github&logoColor=white&style=flat&cacheSeconds=3600" alt="GitHub forks"></a>
@@ -59,6 +63,7 @@
   </p>
 
   <!-- CI/CD & Quality -->
+  <p><sub><b>QUALITY</b></sub></p>
   <p>
     <a href="https://github.com/olaflaitinen/citysense/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/ci.yml?branch=main&label=CI&logo=githubactions&logoColor=white&style=flat&cacheSeconds=3600" alt="CI"></a>
     <a href="https://github.com/olaflaitinen/citysense/actions/workflows/scorecard-analysis.yml"><img src="https://img.shields.io/github/actions/workflow/status/olaflaitinen/citysense/scorecard-analysis.yml?branch=main&label=Scorecard&logo=githubactions&logoColor=white&style=flat&cacheSeconds=3600" alt="Scorecard CI"></a>
@@ -69,6 +74,7 @@
   </p>
 
   <!-- Code Style & Standards -->
+  <p><sub><b>STANDARDS</b></sub></p>
   <p>
     <a href="https://docs.astral.sh/ruff/"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json&style=flat&cacheSeconds=3600" alt="Ruff"></a>
     <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg?logo=black&logoColor=white&style=flat&cacheSeconds=3600" alt="Code style: black"></a>
@@ -80,6 +86,7 @@
   </p>
 
   <!-- Tech Stack -->
+  <p><sub><b>TECH STACK</b></sub></p>
   <p>
     <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/Protocol-MCP-6366F1?logo=modelcontextprotocol&logoColor=white&style=flat" alt="MCP"></a>
     <a href="https://sdgs.un.org/goals/goal11"><img src="https://img.shields.io/badge/UN--SDG-11-009EDB?logo=unitednations&logoColor=white&style=flat" alt="SDG 11"></a>
@@ -96,6 +103,7 @@
   </p>
   
   <!-- OS & Platform -->
+  <p><sub><b>PLATFORM</b></sub></p>
   <p>
     <a href="https://ubuntu.com/"><img src="https://img.shields.io/badge/OS-Linux-FCC624?logo=linux&logoColor=black&style=flat" alt="Linux"></a>
     <a href="https://www.apple.com/macos/"><img src="https://img.shields.io/badge/OS-macOS-000000?logo=macos&logoColor=white&style=flat" alt="macOS"></a>
