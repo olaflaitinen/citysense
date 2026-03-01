@@ -25,11 +25,11 @@
   <!-- Mini Flags -->
   <p>
     <sub><b>PILOT COUNTRIES</b></sub><br>
-    <img src="https://flagcdn.com/16x12/az.png" alt="Azerbaijan flag" width="16" height="12"/> <sub>AZ</sub>&nbsp;&nbsp;
-    <img src="https://flagcdn.com/16x12/fi.png" alt="Finland flag" width="16" height="12"/> <sub>FI</sub>&nbsp;&nbsp;
-    <img src="https://flagcdn.com/16x12/se.png" alt="Sweden flag" width="16" height="12"/> <sub>SE</sub>&nbsp;&nbsp;
-    <img src="https://flagcdn.com/16x12/dk.png" alt="Denmark flag" width="16" height="12"/> <sub>DK</sub>&nbsp;&nbsp;
-    <img src="https://flagcdn.com/16x12/no.png" alt="Norway flag" width="16" height="12"/> <sub>NO</sub>
+    <img src="https://flagcdn.com/16x12/az.png" alt="Azerbaijan flag" width="16" height="12"/> <sub></sub>&nbsp;&nbsp;
+    <img src="https://flagcdn.com/16x12/fi.png" alt="Finland flag" width="16" height="12"/> <sub></sub>&nbsp;&nbsp;
+    <img src="https://flagcdn.com/16x12/se.png" alt="Sweden flag" width="16" height="12"/> <sub></sub>&nbsp;&nbsp;
+    <img src="https://flagcdn.com/16x12/dk.png" alt="Denmark flag" width="16" height="12"/> <sub></sub>&nbsp;&nbsp;
+    <img src="https://flagcdn.com/16x12/no.png" alt="Norway flag" width="16" height="12"/> <sub></sub>
   </p>
 
   <br>
