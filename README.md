@@ -85,41 +85,43 @@
 
 ## Table of Contents
 
-1. [Abstract](#abstract)
-2. [Executive Summary](#executive-summary)
-3. [Overview](#overview)
-4. [Architecture](#architecture)
-5. [Requirements](#requirements)
-6. [Installation](#installation)
-7. [Quick Start](#quick-start)
-8. [Configuration](#configuration)
-9. [CLI Reference](#cli-reference)
-10. [MCP Integration](#mcp-integration)
-11. [Pilot Countries](#pilot-countries)
-12. [Mathematical Foundations](#mathematical-foundations)
-13. [API Summary](#api-summary)
-14. [Data Sources and Connectors](#data-sources-and-connectors)
-15. [WUF13 Alignment](#wuf13-alignment)
-16. [SpatialIntent Structure](#spatialintent-structure)
-17. [H3 Spatial Index](#h3-spatial-index)
-18. [Dependencies](#dependencies)
-19. [Data Flow](#data-flow)
-20. [Troubleshooting](#troubleshooting)
-21. [Glossary](#glossary)
-22. [Frequently Asked Questions](#frequently-asked-questions)
-23. [Version History](#version-history)
-24. [Development](#development)
-25. [Security Considerations](#security-considerations)
-26. [Performance Notes](#performance-notes)
-27. [References](#references)
-28. [License](#license)
-29. [Links](#links)
+- [Abstract](#abstract)
+- [Executive Summary](#executive-summary)
+- [Overview](#overview)
+- [Current Implementation Status](#current-implementation-status)
+- [Architecture](#architecture)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Configuration](#configuration)
+- [CLI Reference](#cli-reference)
+- [MCP Integration](#mcp-integration)
+- [Known Limitations](#known-limitations)
+- [Pilot Countries](#pilot-countries)
+- [Mathematical Foundations](#mathematical-foundations)
+- [API Summary](#api-summary)
+- [Data Sources and Connectors](#data-sources-and-connectors)
+- [WUF13 Alignment](#wuf13-alignment)
+- [H3 Spatial Index](#h3-spatial-index)
+- [Dependencies](#dependencies)
+- [Data Flow](#data-flow)
+- [Troubleshooting](#troubleshooting)
+- [Glossary](#glossary)
+- [Frequently Asked Questions](#frequently-asked-questions)
+- [Version History](#version-history)
+- [Development](#development)
+- [Security Considerations](#security-considerations)
+- [Performance Notes](#performance-notes)
+- [References](#references)
+- [License](#license)
+- [Links](#links)
+- [Acknowledgments](#acknowledgments)
 
 ---
 
 ## Abstract
 
-CitySense is an open-source Python library that bridges geospatial urban data with large language model (LLM) toolchains. It provides two tightly integrated components: a geospatial retrieval-augmented generation (RAG) framework that semantically indexes spatial datasets and retrieves relevant context for natural language queries, and a Model Context Protocol (MCP) server that exposes city intelligence directly into AI-assisted development environments. The library is aligned with the United Nations Sustainable Development Goal 11 (Sustainable Cities and Communities), the New Urban Agenda, and the 13th World Urban Forum (WUF13) dialogue dimensions. CitySense supports five pilot countries (Azerbaijan, Finland, Sweden, Denmark, Norway) with consistent schemas and national coordinate reference systems. The framework implements spectral indices (NDVI, NDWI, NDBI, EVI, MNDWI, BSI) from Sentinel-2 L2A, Reciprocal Rank Fusion for hybrid retrieval, Urban Resilience Composite Score, and SDG 11.3.1 Land Consumption Rate. Street-level imagery (Mapillary, KartaView) and multispectral satellite data (Copernicus Data Space, Sentinel Hub) extend traditional vector geospatial analysis.
+CitySense is an open-source Python library for geospatial retrieval-augmented generation (RAG) and MCP-based AI tooling for urban analysis. It combines natural-language intent parsing, geospatial indexing, and an MCP server so applications can query urban context with minimal boilerplate. The project aligns with SDG 11, the New Urban Agenda, and WUF13 framing. The current codebase includes active pilot configs for Azerbaijan and Finland, OSM-powered indexing, and modular connectors for Sentinel-2, Mapillary, and KartaView integrations.
 
 ---
 
@@ -128,10 +130,11 @@ CitySense is an open-source Python library that bridges geospatial urban data wi
 | Aspect | Description |
 |--------|-------------|
 | Primary function | Semantic geospatial retrieval and MCP server for urban AI |
-| Target users | Urban AI developers, smart city researchers, urban policy tools builders |
-| Core technologies | Python 3.12+, Qdrant, Shapely, GeoPandas, H3, fastembed, MCP |
-| Data sources | OpenStreetMap, Sentinel-2, Mapillary, KartaView, Copernicus Data Space |
-| Standards alignment | WUF13, SDG 11, UN New Urban Agenda |
+| Target users | Urban AI developers, smart city researchers, policy tool builders |
+| Core technologies | Python 3.12+, Qdrant, Shapely, GeoPandas, H3, FastEmbed, FastMCP |
+| Implemented pilots | Azerbaijan (`az`), Finland (`fi`) |
+| Current indexing path | OSM -> H3 -> embeddings -> Qdrant |
+| Standards alignment | WUF13 framing, SDG 11 indicator support |
 | License | EUPL-1.2 |
 
 ---
@@ -163,9 +166,9 @@ CitySense adds a third observational layer on top of traditional vector geospati
 | Capability | Description |
 |------------|-------------|
 | Natural language queries | Intent parsing and semantic retrieval over geospatial knowledge bases |
-| Multi-source indexing | OpenStreetMap, Sentinel-2, Mapillary, KartaView, national registers |
+| Multi-source architecture | OSM active CLI path; Sentinel-2, Mapillary, and KartaView connector modules included |
 | MCP integration | Native Model Context Protocol server for Cursor, Claude, VS Code |
-| WUF13 alignment | Pilot countries with consistent schemas and national CRS |
+| WUF13 alignment | Pilot-aware schema and indicator model aligned to WUF13 framing |
 | SDG 11 metrics | Land consumption rate (11.3.1), urban resilience composite score |
 | Spectral indices | NDVI, NDWI, NDBI, EVI, MNDWI, BSI from Sentinel-2 L2A |
 | Reciprocal Rank Fusion | Hybrid dense and sparse retrieval with configurable parameter k |
@@ -180,26 +183,39 @@ CitySense adds a third observational layer on top of traditional vector geospati
 
 ---
 
+## Current Implementation Status
+
+| Area | Status | Notes |
+|------|--------|-------|
+| CLI commands | Implemented | `pilot`, `index`, `query`, `serve`, `--version` |
+| MCP tools | Implemented | `query_spatial_context` tool is available |
+| Indexing connectors in CLI | Partially implemented | `index build` currently uses OSM connector path |
+| Pilot country configs | Implemented | `az`, `fi` in `citysense.pilot` |
+| Additional pilot profiles | Planned | `se`, `dk`, `no` are parsed in intent logic but not yet shipped as pilot configs |
+| SSE transport | Placeholder | `serve --transport sse` currently prints status message |
+
+---
+
 ## Architecture
 
 ### System Stack
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           CitySense Stack                                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  CLI (citysense)                                                             │
-│  pilot init | index build | query | serve | export | imagery | watch         │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  MCP Server (stdio/SSE)              │  Geospatial RAG Pipeline               │
-│  Tools: query_spatial_context,      │  Intent Parser → H3 Filter →            │
-│  analyze_housing_zone,              │  Dense Retrieval + Sparse (BM25) →       │
-│  get_resilience_score, bounds       │  RRF Fusion → Reranker → Assembler      │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  Connectors: OSM, Sentinel-2, Mapillary, KartaView, CDSE                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  Vector Store (Qdrant)  │  Geometry (Shapely, GeoPandas, H3)                 │
-└─────────────────────────────────────────────────────────────────────────────┘
+```text
++----------------------------------------------------------------------------------+
+|                                 CitySense Stack                                  |
++------------------------------+---------------------------------------------------+
+| CLI                          | RAG pipeline                                      |
+| - pilot (init/status)        | parse_intent -> embed_texts -> hybrid_search ->  |
+| - index (build/status)       | rerank -> assemble_context                       |
+| - query                      |                                                   |
+| - serve (stdio, sse stub)    |                                                   |
++------------------------------+---------------------------------------------------+
+| MCP server (FastMCP)         | Connectors                                        |
+| - query_spatial_context      | OSM (active path), Sentinel-2, Mapillary,        |
+|                              | KartaView (module-level support)                 |
++------------------------------+---------------------------------------------------+
+| Storage and geo foundation: Qdrant + H3 + Shapely + GeoPandas                   |
++----------------------------------------------------------------------------------+
 ```
 
 ### Module Structure
@@ -212,8 +228,11 @@ CitySense adds a third observational layer on top of traditional vector geospati
 | citysense.connectors | OSM, Mapillary, KartaView, Sentinel, base connector |
 | citysense.rag | Intent parsing, retriever, embedder, reranker, assembler |
 | citysense.imagery | Street and satellite processing |
+| citysense.housing | Housing analytics primitives |
+| citysense.governance | Governance-related scoring hooks |
 | citysense.urban | SDG 11 indicators |
 | citysense.climate | Resilience scoring |
+| citysense.realtime | Realtime stream utilities |
 | citysense.pilot | Country-specific configurations |
 | citysense.mcp | MCP server and tools |
 
@@ -281,30 +300,33 @@ pip install -e ".[dev]"
 
 ## Quick Start
 
-### Minimal Workflow
+### 5-Minute Workflow
 
 ```bash
+# 1) select pilot
 citysense pilot init fi
-citysense index build --city Helsinki --sources osm
+
+# 2) build index (current CLI path: OSM)
+citysense index build --city Helsinki --country fi --sources osm
+
+# 3) check index status
+citysense index status --country fi
+
+# 4) run a natural-language query
 citysense query "social housing zones within 1 km of metro stations in Helsinki"
+
+# 5) start MCP server (stdio)
 citysense serve --transport stdio
 ```
 
-### With Imagery (CLIP)
+### Optional: Enable Imagery Dependencies (Connector Modules)
 
 ```bash
 pip install "citysense[clip]"
-citysense pilot init fi
-citysense index build --city Helsinki --sources osm,mapillary
-```
-
-### With Sentinel Hub
-
-```bash
 pip install "citysense[sentinelhub]"
-# Set SENTINELHUB_INSTANCE_ID, SENTINELHUB_CLIENT_ID, SENTINELHUB_CLIENT_SECRET
-citysense index build --city Baku --sources osm,sentinel
 ```
+
+Then set connector credentials (`MAPILLARY_ACCESS_TOKEN`, `CDSE_CLIENT_ID`, `CDSE_CLIENT_SECRET`) as needed.
 
 ---
 
@@ -316,7 +338,7 @@ Configuration is read in priority order: environment variables (prefix `CITYSENS
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| CITYSENSE_PILOT_COUNTRY | None | Pilot module key: az, fi, se, dk, no |
+| CITYSENSE_PILOT_COUNTRY | None | Pilot key (`az`, `fi` fully available; `se`, `dk`, `no` reserved for upcoming profiles) |
 | CITYSENSE_VECTOR_STORE_URL | http://localhost:6333 | Qdrant URL |
 | CITYSENSE_EMBEDDING_MODEL | BAAI/bge-m3 | Text embedding model |
 | MAPILLARY_ACCESS_TOKEN | None | Mapillary API token |
@@ -339,14 +361,19 @@ CDSE_CLIENT_SECRET=your_secret
 
 | Command | Description |
 |---------|-------------|
-| citysense pilot init &lt;country&gt; | Initialize pilot configuration |
-| citysense index build --city &lt;name&gt; --sources &lt;list&gt; | Build vector index |
-| citysense query &lt;natural language&gt; | Execute semantic spatial query |
-| citysense serve --transport stdio | Start MCP server (stdio) |
-| citysense serve --transport sse | Start MCP server (SSE) |
-| citysense export &lt;format&gt; | Export indexed data |
-| citysense imagery &lt;subcommand&gt; | Street/satellite imagery operations |
-| citysense watch | Watch mode for real-time updates |
+| citysense --version | Print package version |
+| citysense pilot init &lt;country&gt; | Initialize pilot country in `.env` (`az`, `fi`, `se`, `dk`, `no`) |
+| citysense pilot status | Show active pilot country |
+| citysense index build --city &lt;name&gt; [--country &lt;iso2&gt;] | Build index for selected city |
+| citysense index status [--country &lt;iso2&gt;] | Show Qdrant collection point count |
+| citysense query &lt;natural language&gt; [--country &lt;iso2&gt;] [--city &lt;name&gt;] | Execute semantic spatial query |
+| citysense serve --transport stdio | Start FastMCP server for local MCP clients |
+| citysense serve --transport sse --port 7832 | SSE transport placeholder (status output) |
+
+Notes:
+- `index build` currently uses the OSM connector path.
+- `--sources` is present for forward compatibility and not fully wired yet.
+- `index build` city routing is currently optimized for Helsinki and Baku.
 
 ### CLI Examples
 
@@ -354,19 +381,22 @@ CDSE_CLIENT_SECRET=your_secret
 # Initialize Finland pilot
 citysense pilot init fi
 
-# Build index for Helsinki from OSM only
-citysense index build --city Helsinki --sources osm
+# Show current pilot status
+citysense pilot status
 
-# Build index with multiple sources (requires tokens)
-citysense index build --city Baku --sources osm,mapillary,sentinel
+# Build index for Helsinki (OSM path)
+citysense index build --city Helsinki --country fi --sources osm
+
+# Check index status in Qdrant
+citysense index status --country fi
 
 # Query with natural language
-citysense query "metro stations within 500m of parks in Stockholm"
+citysense query "metro stations within 500m of parks in Helsinki"
 
 # Start MCP server for Cursor/Claude
 citysense serve --transport stdio
 
-# Start MCP server with SSE for web clients
+# SSE transport status output (placeholder)
 citysense serve --transport sse
 ```
 
@@ -419,23 +449,29 @@ Add to `claude_desktop_config.json`:
 
 1. Qdrant running at configured URL
 2. Index built: `citysense index build --city Helsinki --sources osm`
-3. API tokens for Mapillary and CDSE if using imagery
+3. Optional tokens for Mapillary and CDSE if imagery connectors are enabled
 
 ### MCP Tools
 
 | Tool | Description |
 |------|-------------|
 | query_spatial_context | Execute natural language spatial query and return GeoJSON context |
-| analyze_housing_zone | Analyze housing zone with resilience and SDG metrics |
-| get_resilience_score | Compute URCS for a given location or zone |
-| get_bounds | Return bounding box for pilot city or region |
 
 ### Transport Modes
 
 | Transport | Use case |
 |-----------|----------|
 | stdio | Cursor, Claude Desktop, local scripts |
-| sse | Web applications, remote clients |
+| sse | Placeholder in current CLI; reserved for future remote clients |
+
+---
+
+## Known Limitations
+
+- `citysense index build` currently indexes through the OSM connector path.
+- SSE transport is not a fully running server yet (`serve --transport sse` is a placeholder output).
+- Pilot config modules currently shipped in code are `az` and `fi`.
+- MCP server currently exposes one tool: `query_spatial_context`.
 
 ---
 
@@ -445,9 +481,8 @@ Add to `claude_desktop_config.json`:
 |---------|------------|--------------|--------------|
 | Azerbaijan | az | EPSG:32638 | Baku |
 | Finland | fi | EPSG:3067 | Helsinki |
-| Sweden | se | EPSG:3006 | Stockholm |
-| Denmark | dk | EPSG:25832 | Copenhagen |
-| Norway | no | EPSG:25833 | Oslo |
+
+Planned pilot profiles (not yet shipped as config modules): Sweden (`se`), Denmark (`dk`), Norway (`no`).
 
 ### Pilot Configuration Attributes
 
@@ -571,8 +606,8 @@ Sustainable urban growth: ratio approximately 1. Ratio $> 1$: land consumption o
 | Formula | Parameters | Default |
 |---------|------------|---------|
 | RRF | k | 60 |
-| Transit accessibility | r (radius), λ (decay) | 800 m, 0.003 |
-| URCS physical | α_s, α_a, α_SAR | 0.4, 0.35, 0.25 |
+| Transit accessibility | r (radius), lambda (decay) | 800 m, 0.003 |
+| URCS physical | alpha_s, alpha_a, alpha_SAR | 0.4, 0.35, 0.25 |
 | URCS dimensions | w_physical, w_climate, w_social, w_infrastructure | 0.30, 0.30, 0.20, 0.20 |
 
 ---
@@ -628,10 +663,11 @@ ratio = compute_sdg_1131(
 ### Pilot Configuration
 
 ```python
-from citysense.pilot import get_pilot_config
+from citysense.pilot.az import AZ_CONFIG
+from citysense.pilot.fi import FI_CONFIG
 
-config = get_pilot_config("fi")
-# config.country, config.national_crs, config.default_cities, ...
+config = FI_CONFIG
+print(config.country, config.national_crs, config.default_cities)
 ```
 
 ---
@@ -645,6 +681,8 @@ config = get_pilot_config("fi")
 | Mapillary | Street-level imagery | Mapillary API v4 |
 | KartaView | Street-level imagery | KartaView REST API |
 | National registers | Cadastral, tenure | Country-specific |
+
+Current CLI indexing path uses OSM. Other connectors are available as modules and are being wired into end-to-end CLI flows.
 
 ### Connector Priority
 
@@ -674,9 +712,7 @@ The 13th World Urban Forum (WUF13) dialogue dimensions inform CitySense pilot co
 |---------|------------|-------------------|
 | Azerbaijan | Peri-urban tenure | SAR texture + NDBI heuristic for informality |
 | Finland | Informal settlements | Not applicable; use tenure from registers |
-| Sweden | (Per national profile) | (Per national profile) |
-| Denmark | (Per national profile) | (Per national profile) |
-| Norway | (Per national profile) | (Per national profile) |
+| Planned profiles (se, dk, no) | National profile tuning in progress | Add profile-specific data-gap maps during rollout |
 
 ---
 
@@ -703,7 +739,7 @@ CitySense uses Uber H3 for hexagonal spatial indexing. Benefits include uniform 
 
 ### Resolution Reference
 
-| Resolution | Avg hexagon area (km²) | Use case |
+| Resolution | Avg hexagon area (km^2) | Use case |
 |------------|------------------------|----------|
 | 5 | 252.9 | City-scale analysis |
 | 6 | 36.1 | District-scale |
@@ -728,7 +764,7 @@ H3 cells crossing the antimeridian require special handling. CitySense pre-filte
 | pyproj | >=3.7.1, <4.0 | Coordinate transformations |
 | pyogrio | >=0.10.0 | Vector I/O |
 | numpy | >=2.2.0, <3.0 | Numerical arrays |
-| pandas | >=2.3.0, <3.0 | Tabular data |
+| pandas | >=2.3.0, <4.0 | Tabular data |
 | h3 | >=4.1.0, <5.0 | Hexagonal spatial index |
 | rasterio | >=1.4.3, <2.0 | Raster I/O |
 | xarray | >=2023.1.0 | Multidimensional arrays |
@@ -740,9 +776,9 @@ H3 cells crossing the antimeridian require special handling. CitySense pre-filte
 | litellm | >=1.57.0, <2.0 | LLM abstraction |
 | mcp | >=1.4.0, <2.0 | Model Context Protocol |
 | pystac-client | >=0.8.5, <1.0 | STAC catalog access |
-| rio-cogeo | >=5.4.0, <6.0 | Cloud-optimized GeoTIFF |
+| rio-cogeo | >=5.4.0, <8.0 | Cloud-optimized GeoTIFF |
 | httpx | >=0.28.0, <1.0 | HTTP client |
-| Pillow | >=11.1.0, <12.0 | Image processing |
+| Pillow | >=11.1.0, <13.0 | Image processing |
 | APScheduler | >=3.11.0, <4.0 | Task scheduling |
 | structlog | >=25.1.0, <26.0 | Structured logging |
 | typer | >=0.15.0, <1.0 | CLI framework |
@@ -761,47 +797,44 @@ H3 cells crossing the antimeridian require special handling. CitySense pre-filte
 
 ### Index Build Flow
 
-```
-OSM Overpass / STAC / Connectors
-        │
-        ▼
-Geometry + Metadata (GeoDataFrame)
-        │
-        ▼
-H3 Cell Assignment (resolution 7 default)
-        │
-        ▼
-Chunking + Text Serialization
-        │
-        ▼
-Dense Embedding (fastembed) + Sparse (BM25)
-        │
-        ▼
-Qdrant Upsert (vectors + payload)
+```text
+City + country input
+  |
+  v
+OSMConnector.fetch(bbox)
+  |
+  v
+GeoDataFrame normalization
+  |
+  v
+H3 assignment + chunk text
+  |
+  v
+Embedding generation
+  |
+  v
+Qdrant upsert
 ```
 
 ### Query Flow
 
-```
-Natural Language Query
-        │
-        ▼
-parse_intent() → SpatialIntent
-        │
-        ▼
-H3 Filter (bbox → H3 cells)
-        │
-        ▼
-Dense + Sparse Retrieval (top-k each)
-        │
-        ▼
-RRF Fusion (k=60)
-        │
-        ▼
-Reranker (optional)
-        │
-        ▼
-Assembled Context (GeoJSON, summary)
+```text
+Natural-language query
+  |
+  v
+parse_intent() -> SpatialIntent
+  |
+  v
+embed_texts(query)
+  |
+  v
+hybrid_search(Qdrant + BM25)
+  |
+  v
+rerank(top_k)
+  |
+  v
+assemble_context()
 ```
 
 ---
@@ -859,7 +892,7 @@ Coverage excludes connectors and modules under active development. Run `pytest t
 
 ### Can I add a new pilot country?
 
-Yes. Implement a PilotConfig in `citysense.pilot`, register in the pilot registry, and add to the CLI init options. See CONTRIBUTING.md.
+Yes. Add a new `PilotConfig` module under `citysense.pilot`, expose it in package imports, and extend CLI validation logic for country codes. See CONTRIBUTING.md.
 
 ---
 
@@ -867,8 +900,9 @@ Yes. Implement a PilotConfig in `citysense.pilot`, register in the pilot registr
 
 | Version | Date | Highlights |
 |---------|------|------------|
-| 0.2.0 | 2026-02-28 | WUF13 alignment, five pilot countries, SDG 11 indicators, mathematical foundations |
-| Unreleased | - | License EUPL-1.2, initial structure per Specification v0.2.0 |
+| 0.2.1 | 2026-02 | Current alpha release; core RAG pipeline, FastMCP server, and pilot configs for AZ/FI |
+| 0.2.0 | 2026-02-28 | Initial WUF13-aligned specification baseline |
+| Unreleased | - | Additional pilot profiles, richer MCP tool surface, expanded connector wiring |
 
 ---
 
@@ -947,8 +981,8 @@ mkdocs serve
 
 | Operation | Typical scale | Notes |
 |-----------|---------------|-------|
-| Index build (OSM, city) | 10k–100k features | Depends on city size, H3 resolution |
-| Query latency | 100–500 ms | Dense + sparse + RRF; reranker adds ~50 ms |
+| Index build (OSM, city) | 10k-100k features | Depends on city size, H3 resolution |
+| Query latency | 100-500 ms | Dense + sparse + RRF; reranker adds ~50 ms |
 | Embedding | BAAI/bge-m3 | ~50 docs/s on CPU; GPU accelerates |
 | Qdrant | Local | Sub-10 ms for vector search at city scale |
 
@@ -978,7 +1012,7 @@ If you use CitySense in academic work, please cite:
 
 ```
 CitySense: Geospatial RAG and MCP Server for Urban AI Development.
-Specification v0.2.0. WUF13 Aligned. 2026.
+Specification v0.2.1. WUF13 Aligned. 2026.
 https://github.com/olaflaitinen/citysense
 ```
 
@@ -986,10 +1020,10 @@ https://github.com/olaflaitinen/citysense
 
 | Index | Low | Medium | High | Interpretation |
 |-------|-----|--------|------|-----------------|
-| NDVI | < 0.1 | 0.1–0.3 | > 0.3 | Vegetation density |
+| NDVI | < 0.1 | 0.1-0.3 | > 0.3 | Vegetation density |
 | NDWI | < 0 | 0 | > 0 | Open water presence |
 | NDBI | < 0 | 0 | > 0 | Built-up intensity |
-| EVI | < 0.2 | 0.2–0.4 | > 0.4 | Enhanced vegetation |
+| EVI | < 0.2 | 0.2-0.4 | > 0.4 | Enhanced vegetation |
 | BSI | < 0 | 0 | > 0 | Bare soil / impervious |
 
 ---
@@ -1016,3 +1050,4 @@ EUPL-1.2. See [LICENSE](LICENSE).
 ## Acknowledgments
 
 CitySense builds on open standards and community data: OpenStreetMap contributors, Copernicus Programme, Mapillary, KartaView, Qdrant, and the Model Context Protocol initiative. Pilot country configurations align with national spatial data infrastructures and WUF13 dialogue priorities.
+
