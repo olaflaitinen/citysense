@@ -237,16 +237,16 @@ CitySense adds a third observational layer on top of traditional vector geospati
 |                                 CitySense Stack                                  |
 +------------------------------+---------------------------------------------------+
 | CLI                          | RAG pipeline                                      |
-| - pilot (init/status)        | parse_intent -> embed_texts -> hybrid_search ->  |
-| - index (build/status)       | rerank -> assemble_context                       |
+| - pilot (init/status)        | parse_intent -> embed_texts -> hybrid_search ->   |
+| - index (build/status)       | rerank -> assemble_context                        |
 | - query                      |                                                   |
 | - serve (stdio, sse stub)    |                                                   |
 +------------------------------+---------------------------------------------------+
 | MCP server (FastMCP)         | Connectors                                        |
-| - query_spatial_context      | OSM (active path), Sentinel-2, Mapillary,        |
-|                              | KartaView (module-level support)                 |
+| - query_spatial_context      | OSM (active path), Sentinel-2, Mapillary,         |
+|                              | KartaView (module-level support)                  |
 +------------------------------+---------------------------------------------------+
-| Storage and geo foundation: Qdrant + H3 + Shapely + GeoPandas                   |
+| Storage and geo foundation: Qdrant + H3 + Shapely + GeoPandas                    |
 +----------------------------------------------------------------------------------+
 ```
 
