@@ -48,7 +48,7 @@ dependencies = [
     "httpx>=0.28.0,<1.0",
     "Pillow>=11.1.0,<13.0",
     "APScheduler>=3.11.0,<4.0",
-    "structlog>=25.1.0,<26.0",
+    "structlog>=25.1.0,<27.0",
     "typer>=0.15.0,<1.0",
 ]
 
